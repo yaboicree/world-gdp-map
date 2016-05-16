@@ -2,16 +2,40 @@
 <html>
 	<head>
 		<title>worldly - the wealthy stealthy python-based interactive map display</title>
+		
+		<!-- basscss for basic styling -->
+		<link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+		<!-- make an icon for the page
+		<link rel="icon" href="{{ url_for('static', filename='icon.png') }}"> -->
+
+		<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	</head>
 	<body>
-		<header>
-			<div class="container">
-				<!-- make a decent-looking header -->
-			</div>
-		</header>
-		<div class="container">
-			<!-- insert map -->
-			<!-- add interactive tools -->
+		<div class="clearfix max-width-4 mx-auto">
+			<header class="col col-12">
+					<!-- make a decent-looking header -->
+					<h1>test</h1>
+			</header>
+		
+			<!-- insert map with kartograph -->
+
+			<object data="{{ url_for('static', filename='south_america.svg') }}" type="image/svg+xml"></object> 
+			
+			<!-- add interactive tools to modify map - unsure of how that will work -->
+
+			<!-- output all data from penn_complete -->
+			{{ Penn }}
+			<br><br>
+			{% for col in Penn.columns %}
+			{{ col.key }}
+				<br>
+			{% endfor %}
+<br><br>
+			{{ Legend }}
 		</div>
 	</body>
 </html>

@@ -11,4 +11,5 @@ meta = MetaData(bind=engine)
 def index():
 		Penn = Table('penn_complete', meta, autoload=True)
 		Legend = Table('legend', meta, autoload=True)
+		Map = render_template('south_america.svg')
 		return render_template('index.html', **locals())
