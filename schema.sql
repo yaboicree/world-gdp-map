@@ -8,9 +8,15 @@ drop table if exists penn;
 	create table penn (
 	country text primary key,
 	year integer not null,
-	gdp Decimal, -- Real GDP PPP 2005 $$, rgdpna
-	pop integer, -- population, pop
-	capital Decimal, -- capital stock, ck
-	school Decimal, -- educational attainment, hc
-	trade Decimal  -- csh_h + csh+r
+	rgdpna Decimal, -- Real GDP PPP 2005 $$ 
+	pop integer, -- population
+	ck Decimal, -- capital stock 
+	hc Decimal, -- educational attainment
+	csh_x Decimal, -- exports
+	csh_m Decimal -- imports
+);
+
+drop table if exists penn_complete;
+	create table penn_complete (
+	country text primary key
 );
